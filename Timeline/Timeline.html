@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Timeline.css">
+    
+    <title>WattWise: Timeline</title>
+</head>
+<body>
+    <header>
+        <span class="logo">
+          <img src="../SIA PICS/logo.png" alt="logo" />
+          <h2>WattWise</h2>
+        </span>
+
+        <div class="nav">
+          <ul>
+            <li><a href="../html/portal.html">Home</a></li>
+            <li><a href="../html/portal.html">Portal</a></li>
+            <li><a href="../html/Article.html">Article</a></li>
+            <li><a href="../html/profile.html">Profiles</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <span class="login">
+          <button onclick="Login()">Log In</button>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z">
+            </path>
+          </svg>
+        </span>
+	</header>
+  
+	<img class="topbackground" src="background.jpg">
+    
+	<div class="container">
+		<div class="dropdownbox">
+			
+			<select id="year">
+				<option value="" disabled selected>Year</option>
+				<option value="2023">2023</option>
+				<option value="2022">2022</option>
+				<option value="2021">2021</option>
+				<option value="2020">2020</option>
+			</select>
+			
+			<select id="month">
+				<option value="" disabled selected>Month</option>
+				<option value="1">January</option>
+				<option value="2">February</option>
+				<option value="3">March</option>
+				<option value="4">April</option>
+				<option value="5">May</option>
+				<option value="6">June</option>
+				<option value="7">July</option>
+				<option value="8">August</option>
+				<option value="9">September</option>
+				<option value="10">October</option>
+				<option value="11">November</option>
+				<option value="12">December</option>
+			</select>
+		</div>
+		
+		<div class="output">
+			
+		</div>
+	</div>
+
+	<script>
+	
+    document.getElementById('year').addEventListener('change', updateOutput);
+    document.getElementById('month').addEventListener('change', updateOutput);
+
+    function updateOutput() {
+        const selectedYear = document.getElementById('year').value;
+        const selectedMonth = document.getElementById('month').value;
+        const output = document.querySelector('.output');
+
+        
+        if (selectedYear && selectedMonth) {
+            
+            const dummyData = `Selected Year: ${selectedYear}, Selected Month: ${selectedMonth}`;
+
+            
+            output.textContent = dummyData;
+        } else {
+            
+            output.textContent = '';
+        }
+    }
+	</script>
+
+</body>
+</html>
