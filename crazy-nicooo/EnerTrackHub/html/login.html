@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnerTrackHub</title>
-    <link rel="stylesheet" href="/SIA-EnerTrackHub/css/login.css">
+    <title>WattWise</title>
+    <link rel="stylesheet" href="../html/css/login.css">
 </head>
 <body>
     <header>
         <div>
-            <img src="/SIA-EnerTrackHub/SIA PICS/logo.png" alt="Logo">
-            <h1>EnerTrackHub</h1>
+            <img src="../html/images/logo.png" alt="Logo">
+            <h1>WattWise</h1>
         </div>
         <a href="#">Log in</a>
     </header>
@@ -26,7 +26,7 @@
 
                 <label for="password" class="password-label">Password
                     <div class="password-toggle" onclick="togglePasswordVisibility()">
-                        <img src="/SIA-EnerTrackHub/SIA PICS/eye-on.png">
+                        <img src="../html/images/eye-on.png">
                     </div>
                 </label>
 
@@ -34,7 +34,7 @@
                     <input type="password" id="password" name="password" required>
                 </div>
 
-                <button type="submit">Log in</button>
+                <button type="submit" onclick="redirectToUser()">Log in</button>
 
                 <div class="additional-info">
                     By continuing, you agree to the <a href="#" class="condition">Terms of use</a> and <a href="#" class="condition">Privacy Policy</a>. 
@@ -61,15 +61,18 @@
 
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
-                passwordToggle.src = "/SIA-EnerTrackHub/SIA PICS/eye-off.png";
+                passwordToggle.src = "images/eye-off.png";
             } else {
                 passwordInput.type = "password";
-                passwordToggle.src = "/SIA-EnerTrackHub/SIA PICS/eye-on.png";
+                passwordToggle.src = "images/eye-on.png";
             }
         }
 
         function redirectToSignup() {
             window.location.href = "signup.html";
+        }
+        function redirectToUser() {
+            window.location.href = "user_profile.html";
         }
     </script>
 </body>
